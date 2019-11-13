@@ -1,0 +1,91 @@
+/**
+ * ===========================================================
+* PAGE CONTENT mobile
+* ===========================================================
+*/
+.page-content {
+  width: 320px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.page-content__banner {
+  position: relative;
+
+  text-align: center;
+
+  height: 388px;
+  background-color: #fafafa;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+
+  &--small {
+    background-color: #396e98;
+    height: 156px;
+    background-size: 773px auto;
+    background-position: center bottom;
+  }
+}
+
+.page-content__banner-text {
+  margin: 0;
+  margin-top: 50px;
+
+  width: 230px;
+  height: 40px;
+
+  z-index: 200;
+
+  &--hide {
+    display: none;
+  }
+}
+
+.page-content__banner-big {
+  margin: 0;
+  margin-top: 90px;
+
+  width: 282px;
+  height: 215px;
+
+  background-color: transparent;
+  z-index: 100;
+}
+
+/**
+* ===========================================================
+* PAGE CONTENT desktop
+* ===========================================================
+*/
+
+@media (min-width: @desktop-max-width) {
+  .page-content {
+    width: 1200px;
+
+    margin: 0 auto;
+  }
+
+  .page-content__banner {
+    position: relative;
+
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain, cover;
+
+
+    &--small {
+      height: 301px;
+    }
+  }
+
+  .page-content__banner-big {
+    margin: 0;
+    margin-top: 78px;
+  }
+
+  .page-content__banner-text {
+    margin: 0;
+    margin-top: 102px;
+  }
+}

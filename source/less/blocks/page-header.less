@@ -1,0 +1,58 @@
+/**
+  * ===========================================================
+  * PAGE HEADER
+  * ===========================================================
+*/
+.page-header {
+  width: 320px;
+
+  margin: 0 auto;
+  padding: 0;
+}
+
+.page-header__logo {
+  height: 0;
+  position: relative;
+}
+
+.page-header__top-logo {
+  position: absolute;
+
+  top: -57px;
+  left: 50%;
+
+  margin-left: -51px;
+
+  width: 104px;
+  height: 23.5px;
+
+  z-index: 100;
+}
+
+/**
+  * ===========================================================
+  * PAGE HEADER desktop
+  * ===========================================================
+*/
+
+@media (min-width: @desktop-max-width) {
+  .page-header {
+    width: 1200px;
+
+    margin: 0 auto;
+  }
+
+  .page-header__top-logo {
+    position: absolute;
+
+    top: -57px;
+    left: 50%;
+
+    margin-left: -94px;
+
+    width: 187px;
+    height: 96px;
+
+    z-index: 100;
+  }
+}
