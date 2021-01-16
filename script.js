@@ -1,25 +1,20 @@
+// class -> .CLASS_NAME
+// id -> #ID
+// tag -> TAG_NAME
 
-var carYear = 2000
-var personYear = 1990
+var a = document.querySelector('a')
+var oldHref = a.getAttribute('href')
 
-function calculateAge(year) {
-  var currentYear = 2020
-  var result = currentYear - year
-  return result
-}
+a.setAttribute('href', 'https://ya.ru')
+a.setAttribute('title', 'Go to yandex')
+a.textContent = 'Yandex'
 
-function checkAngLogAge(year, name, compareTo) {
-  if (calculateAge(year) < compareTo) {
-    console.log('Возраст ' + name + ' меньше ' + compareTo + ' лет')
-  } else {
-    console.log('Возраст '  + name + ' больше ' + compareTo + ' лет')
-  }
-}
-
-checkAngLogAge(carYear, 'машины', 8)
-checkAngLogAge(personYear, 'человека', 40)
+console.log(a.attributes)
 
 
-const fruits = ['mangoes', 'apples', 'bananas']
-const b = fruits.pop();
-console.log(b)
+const box1 = document.querySelector('#box1')
+const box2 = document.querySelector('#box2')
+
+box1.classList.add('red')
+
+box2.classList.add('blue')
