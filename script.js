@@ -1,22 +1,12 @@
-document.querySelector('button').addEventListener('click', function(event) {
-  const value = document.querySelector('input').value
+const $start = document.querySelector('#start')
+const $game = document.querySelector('#game')
 
-  const obj = {
-    text : value
-  }
-  localStorage.setItem('header', JSON.stringify(obj))
-})
+$start.addEventListener('click', startGame)
+function startGame() {
+  $game.style.backgroundColor = '#fff'
+  $start.classList.add('hide')
+  renderBox()
+}
+function renderBox() {
 
-document.addEventListener('DOMContentLoaded', function() {
-  let obj;
-  try {
-    obj = JSON.parse(localStorage.getItem('header'))
-  } catch (e) {
-    obj = {}
-  }
-
-  if (obj.text && obj.text.trim()) {
-    document.querySelector('h1').textContent = obj.text
-  }
-
-})
+}
