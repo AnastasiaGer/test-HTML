@@ -1,25 +1,15 @@
-var createCounter = function(counterName) {
-  var counter = 0
+var person = {
+  age: 28,
+  name: 'Max',
+  job: 'Frontend',
+  displayInfo: function(ms) {
 
-  return {
-    increment: function() {
-      counter++
-    },
-    decrement: function() {
-      counter--
-    },
-    getCounter: function() {
-      return counter
-    }
+    setTimeout(function() {
+      console.log('Name: ', this.name)
+      console.log('Job:', this.job)
+      console.log('Age: ', this.age)
+    }.bind(this), ms)
   }
 }
 
-var counterA = createCounter('Counter A')
-var counterB = createCounter('Counter B')
-
-counterA.increment()
-counterA.increment()
-counterA.increment()
-
-counterB.decrement()
-counterB.decrement()
+person.displayInfo(5000)
