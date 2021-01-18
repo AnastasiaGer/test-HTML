@@ -1,15 +1,30 @@
-var person = {
-  age: 28,
-  name: 'Max',
-  job: 'Frontend',
-  displayInfo: function(ms) {
-
-    setTimeout(function() {
-      console.log('Name: ', this.name)
-      console.log('Job:', this.job)
-      console.log('Age: ', this.age)
-    }.bind(this), ms)
+function printObject(objName) {
+  console.log('Printing object: ', objName)
+  for (var key in this) {
+    if (this.hasOwnProperty(key)) {
+      console.log('[' + key + ']', this[key])
+    }
   }
 }
 
-person.displayInfo(5000)
+
+
+var person = {
+  firstName: 'Max',
+  job: 'Backend',
+  age: 29,
+  friends: ['Elena', 'Igor']
+}
+
+var car = {
+  name: 'Ford',
+  model: 'Focus',
+  year: 2017
+}
+
+var printPerson = printObject.bind(person)
+printPerson('Person')
+
+printObject.call(car, 'Car')
+
+printObject.apply(person, ['Person'])
