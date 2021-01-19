@@ -1,25 +1,36 @@
-const createCar = (name, model) => ({name, model})
+const form = document.querySelector('form')
 
-const ford = createCar('Ford', 'Focus')
+form.addEventListener('submit', event => {
 
-console.log(ford)
+  event.preventDefault()
 
-const yearField = 'year'
+  const title = form.title.value
+  const text = form.text.value
+  const description = form.description.value
 
-const bmw = {
-  name: 'BMW',
-  ['model']: 'X6 Sport',
-  [yearField]: 2018,
+  saveForm(title, text, description)
 
-  logFields() {
-    const {name, year, model} = this
-    console.log(name, model, year)
+})
+
+// Spread
+// function saveForm(data) {
+//   const formData = {
+//     date: new Date().toLocaleDateString(),
+//     ...data
+//   }
+
+//   console.log('Ford data:', formData)
+// }
+
+// Rest
+function saveForm(...args) {
+
+  const [title, text, description] = args
+
+  const formData = {
+    date: new Date().toLocaleDateString(),
+    title, text, description
   }
+
+  console.log('Ford data:', formData)
 }
-
-console.log(bmw)
-bmw.logFields()
-
-// const year = bmw.year
-const {year} = bmw
-console.log(year)
