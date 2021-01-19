@@ -1,22 +1,25 @@
-var a = [1, 2, 3]
+const createCar = (name, model) => ({name, model})
 
-var b = [5, 'hello', 6]
+const ford = createCar('Ford', 'Focus')
 
-Array.prototype.double = function () {
-  var newArray = this.map(function (item) {
-    if (typeof item === 'number') {
-      return item * item
-    }
+console.log(ford)
 
-    if (typeof item === 'string') {
-      return item += item
-    }
-  })
-  return newArray
+const yearField = 'year'
+
+const bmw = {
+  name: 'BMW',
+  ['model']: 'X6 Sport',
+  [yearField]: 2018,
+
+  logFields() {
+    const {name, year, model} = this
+    console.log(name, model, year)
+  }
 }
 
-var newA = a.double()
-var newB = b.double()
+console.log(bmw)
+bmw.logFields()
 
-console.log(newA)
-console.log(newB)
+// const year = bmw.year
+const {year} = bmw
+console.log(year)
