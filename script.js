@@ -1,68 +1,67 @@
-// RootElement <= Box <= instances
+class Dropdown {
+  constructor(selector, options) {
+    this.$el = document.querySelector(selector)
+    this.items = options.items
 
-class RootElement {
-  constructor(tagName = 'div') {
-    this.$el = document.createElement(tagName)
-    this.$el.style.marginBottom = '20px'
+    this.$el.querySelector('.dropdown__label').textContent = this.items[0].label
+
+    this.$el.addEventListener('click', event => {
+      if (event.target.classList.contains('dropdown__label')) {
+        if (this.$el.classList.contains('open')) {
+          this.close()
+        } else {
+          this.open()
+        }
+      } else if (event.target.tagName.toLowerCase() === 'li') {
+        this.select(event.target.dataset.id)
+      }
+    })
+
+    const itemsHTML = this.items.map(i => {
+      return `<li data-id="${i.id}">${i.label}</li>`
+    }).join(' ')
+
+    this.$el.querySelector('.dropdown__menu').insertAdjacentHTML('afterbegin', itemsHTML)
   }
 
-  hide() {
-    this.$el.style.opacity = '0'
+  select(id) {
+    const item = this.items.find(i => i.id === id)
+    this.$el.querySelector('.dropdown__label').textContent = item.label
+    this.close()
   }
 
-  show() {
-    this.$el.style.opacity = '1'
+  open() {
+    this.$el.classList.add('open')
   }
 
-  append() {
-    document.querySelector('.wrapper').insertAdjacentElement('beforeend', this.$el)
-  }
-}
-
-class Box extends RootElement {
-  constructor(color, size = 150, tagName) {
-    super(tagName)
-    this.color = color
-    this.size = size
-  }
-
-  create() {
-    this.$el.style.background = this.color
-    this.$el.style.width = this.$el.style.height = `${this.size}px`
-
-    this.append()
-
-    return this
-  }
-}
-
-class Circle extends RootElement {
-  constructor(color) {
-    super()
-
-    this.color = color
-  }
-
-  create() {
-    this.$el.style.borderRadius = '50%'
-    this.$el.style.width = this.$el.style.height = `120px`
-    this.$el.style.background = this.color
-
-    this.append()
-
-    return this
+  close() {
+    this.$el.classList.remove('open')
   }
 }
 
-const redBox = new Box('red', 100, 'div').create()
-const blueBox = new Box('blue').create()
 
-const circle = new Circle('green').create()
 
-circle.$el.addEventListener('mouseenter', () => {
-  circle.hide()
-})
 
-circle.$el.addEventListener('mouseleave', () => {
-  circle.show()
+const dropdown = new Dropdown('#dropdown', {
+  items: [{
+      label: 'Москва',
+      id: 'msk'
+    },
+    {
+      label: 'Санкт-Петербург',
+      id: 'spb'
+    },
+    {
+      label: 'Новосибирск',
+      id: 'nsk'
+    },
+    {
+      label: 'Краснодар',
+      id: 'krdr'
+    },
+    {
+      label: 'Ростов',
+      id: 'rostov'
+    }
+  ]
 })
