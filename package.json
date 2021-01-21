@@ -2,38 +2,30 @@
   "name": "js-native-blog",
   "version": "1.0.0",
   "description": "js native blog",
-  "main": "script.js",
+  "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack --mode development",
-    "start": "webpack-dev-server --mode production --open"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AnastasiaGer/JS-Minin.git"
+    "start": "webpack-dev-server --mode development --open"
   },
   "keywords": [
     "js",
     "blog",
     "javascript"
   ],
-  "author": "Anastasia Germanova",
+  "author": "Vladilen Mini",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AnastasiaGer/JS-Minin/issues"
-  },
-  "homepage": "https://github.com/AnastasiaGer/JS-Minin#readme",
   "devDependencies": {
-    "@babel/cli": "^7.12.10",
-    "@babel/core": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
-    "babel-loader": "8.2.2",
-    "html-webpack-plugin": "4.5.1",
-    "webpack": "5.16.0",
-    "webpack-cli": "4.4.0",
-    "webpack-dev-server": "3.11.2"
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "babel-loader": "^8.0.4",
+    "html-webpack-plugin": "^4.0.0-beta.5",
+    "webpack": "^4.28.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.12.1"
+    "@babel/polyfill": "^7.2.5"
   }
 }
