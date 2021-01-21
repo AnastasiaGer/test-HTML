@@ -1,0 +1,24 @@
+{
+  "name": "js-native-blog",
+  "version": "1.0.0",
+  "description": "js native blog",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnastasiaGer/JS-Minin.git"
+  },
+  "keywords": [
+    "js",
+    "blog",
+    "javascript"
+  ],
+  "author": "Anastasia Germanova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnastasiaGer/JS-Minin/issues"
+  },
+  "homepage": "https://github.com/AnastasiaGer/JS-Minin#readme"
+}
