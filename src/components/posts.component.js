@@ -1,6 +1,6 @@
-import {
-  Component
-} from '../core/component'
+import { Component } from '../core/component'
+import { apiService } from '../services/api.service'
+import { TransformService } from '../services/transform.service'
 
 
 export class PostsComponent extends Component {
@@ -8,6 +8,8 @@ export class PostsComponent extends Component {
     super(id)
   }
 
-  init() {
+  async onShow() {
+    const fbData = await apiService.fetchPosts()
+    const posts = TransformService.fbObjectToArray(fbData)
   }
 }

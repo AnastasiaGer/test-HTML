@@ -1,7 +1,7 @@
 import { Component } from '../core/component'
 import { Form } from '../core/form'
 import { Validators } from '../core/validators'
-import { apiService } from '../services/api.services'
+import { apiService } from '../services/api.service'
 
 export class CreateComponent extends Component {
   constructor(id) {
